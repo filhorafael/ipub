@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AngularFireDatabase, AngularFireList } from "angularfire2/database"; 
 
-/**
- * Generated class for the ComandaPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+export class Comanda{
+  item: string;
+  valor_unitario = 4.00;
+  qtd: {int};
+  valor_total: {double}
+}
 
 @IonicPage()
 @Component({
@@ -15,7 +16,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ComandaPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  lista: AngularFireList<any>;
+  comanda: Comanda;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFireDatabase) {
+
+    this.lista = this.af.list('/ipubdatabase');
+    this.comanda = new Comanda();
+  }
+
+  inserir(){
+    this.lista.push(this.comanda);
   }
 
   ionViewDidLoad() {
