@@ -6,11 +6,25 @@
 
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let comanda of lista | async">
-      <h2>{{comanda.item}}</h2>
-      <h3>{{comanda.valor_unitario}}</h3>
-      <h4>{{comanda.qtd}}</h4>
-      <h5>{{comanda.valor_total}}</h5>
+    <ion-item *ngFor='let item of comanda'>
+
+      <h3>Item: {{ item.item }} &nbsp; Quantidade: {{ item.qtd }} &nbsp; Valor Unitário: {{ item.valor_unitario }}</h3>
+
     </ion-item>
   </ion-list>
+
+  <ion-item>
+    <ion-label>10% para os garçons</ion-label>
+    <ion-toggle></ion-toggle>
+  </ion-item>
+
+  <br>
+
+  <ion-item>
+    <b>Total</b>
+    <ion-note item-end>
+      <b>R$ {{valorTotal}}</b>
+    </ion-note>
+  </ion-item>
+
 </ion-content>

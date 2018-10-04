@@ -1,11 +1,52 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Contact
+      Solicite ao Garçom
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
+<ion-list radio-group>
+  <ion-list-header>
+    Escolha a opção que desejar:
+  </ion-list-header>
 
+  <ion-item>
+    <ion-label>Talheres</ion-label>
+    <ion-radio value="talheres"></ion-radio>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Copo</ion-label>
+    <ion-radio value="copo"></ion-radio>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Prato</ion-label>
+    <ion-radio value="prato"></ion-radio>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Ketchup</ion-label>
+    <ion-radio value="ketchup"></ion-radio>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Guardanapo</ion-label>
+    <ion-radio value="guardanapo"></ion-radio>
+  </ion-item>
+
+  <br>
+
+  <ion-item>
+    <ion-input type="text" placeholder="Digite o que deseja..."></ion-input>
+  </ion-item>
+
+  <button ion-button block icon-start>
+    <ion-icon name="create"></ion-icon>
+    Pedir
+  </button>
+
+</ion-list>
 </ion-content>

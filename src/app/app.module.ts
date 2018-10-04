@@ -1,3 +1,4 @@
+import { CervejasPage } from './../pages/cervejas/cervejas';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { ComandaPage } from './../pages/comanda/comanda';
 import { NgModule, ErrorHandler } from '@angular/core';
@@ -16,6 +17,9 @@ import { ComidasPageModule } from '../pages/comidas/comidas.module';
 import { CervejasPageModule } from '../pages/cervejas/cervejas.module';
 import { AngularFireModule } from "angularfire2";
 import { CardapioPage } from '../pages/cardapio/cardapio';
+import { CommonModule } from '@angular/common';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import { QrcodePage } from '../pages/qrcode/qrcode';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBJWkEuSPA8rN7l0mazBty5Jvns0JRcrnE",
@@ -37,11 +41,13 @@ export const firebaseConfig = {
     HomePage,
     TabsPage,
     ComandaPage,
-    CardapioPage
+    CardapioPage,
+    QrcodePage,
 
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     IonicModule.forRoot(MyApp),
     IntroPageModule,
     BebidasPageModule,
@@ -58,13 +64,16 @@ export const firebaseConfig = {
     HomePage,
     TabsPage,
     ComandaPage,
-    CardapioPage
+    CardapioPage,
+    QrcodePage,
 
   ],
   providers: [
     StatusBar,
     SplashScreen,
     AngularFireDatabase,
+    BarcodeScanner,
+    CervejasPage,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
   ]
 })

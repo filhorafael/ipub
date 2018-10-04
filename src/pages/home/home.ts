@@ -10,7 +10,10 @@ export class HomePage {
 
   }
 
- 
+goToPerfilPage() {
+
+  
+}
 
   
 

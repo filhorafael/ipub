@@ -1,36 +1,39 @@
 <ion-header>
-    <ion-navbar>
-      <ion-title>
-        Menu
-      </ion-title>
-    </ion-navbar>
-  </ion-header>
-  
-  <ion-content>
+  <ion-navbar>
+    <ion-title>
+      Menu
+    </ion-title>
+  </ion-navbar>
+</ion-header>
 
-      <ion-card>
-          <ion-card-header>
-            Perfil
-          </ion-card-header>
-        
-          <ion-list>
-            <button ion-item>
-              <ion-icon name="contact" item-start></ion-icon>
-              Editar
-            </button>
-        
-            <button ion-item>
-              <ion-icon name="heart" item-start></ion-icon>
-              Favoritos
-            </button>
-        
-            <button ion-item>
-              <ion-icon name="card" item-start></ion-icon>
-              Formas de Pagamento
-            </button>
-        
-          </ion-list>
-        </ion-card>
-  
-  </ion-content>
-  
+<ion-content>
+
+  <ion-card>
+    <ion-card-header>
+      Perfil
+    </ion-card-header>
+
+    <ion-list>
+      <button (click)="goToPerfilPage" ion-item>
+        <ion-icon name="contact" item-start></ion-icon>
+        Editar
+      </button>
+
+      <button ion-item>
+        <ion-icon name="heart" item-start></ion-icon>
+        Favoritos
+      </button>
+
+      <button ion-item>
+        <ion-icon name="card" item-start></ion-icon>
+        Formas de Pagamento
+      </button>
+
+      <button ion-item>
+        Sair
+      </button>
+
+    </ion-list>
+  </ion-card>
+
+</ion-content>

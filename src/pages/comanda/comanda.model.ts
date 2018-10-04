@@ -1,14 +1,14 @@
 export class ComandaModel {
     public item: string;
-    public qtd: any;
-    public valor_unitario: any;
-    public valor_total: any;
+    public qtd: number;
+    public valor_unitario: number;
+    public valor_total: number;
 
     constructor() {
         this.item = '';
         this.qtd = 1;
-        this.valor_unitario = 4;
-        this.valor_total = 1;
+        this.valor_unitario = 0;
+        this.valor_total = 0;
     }
 
     public getItem(): string {
@@ -19,25 +19,25 @@ export class ComandaModel {
         this.item = item;
     }
 
-    public getQtd(): string {
+    public getQtd(): number {
         return this.qtd;
     }
 
-    public setQtd(qtd: string) {
+    public setQtd(qtd: number) {
         this.qtd = qtd;
     }
-    public getValor_unitario(): string {
+    public getValor_unitario(): number {
         return this.valor_unitario;
     }
 
-    public setValor_unitario(valor_unitario: string) {
+    public setValor_unitario(valor_unitario: number) {
         this.valor_unitario = valor_unitario;
     }
-    public getValor_total(): string {
+    public getValor_total(): number {
         return this.valor_total;
     }
 
-    public setValor_total(valor_total: string) {
+    public setValor_total(valor_total: number) {
         this.valor_total = valor_total;
     }
 }

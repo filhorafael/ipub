@@ -1,36 +1,41 @@
+import { CervejasPage } from './../cervejas/cervejas';
+import { ComandaModel } from './../comanda/comanda.model';
+import { NavController } from 'ionic-angular';
+import { AngularFireDatabase } from 'angularfire2/database';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { AngularFireDatabase, AngularFireList } from "angularfire2/database"; 
 
-export class Comanda{
-  item: string;
-  valor_unitario = 4.00;
-  qtd: {int};
-  valor_total: {double}
-}
-
-@IonicPage()
 @Component({
   selector: 'page-comanda',
   templateUrl: 'comanda.html',
 })
+
+
 export class ComandaPage {
 
-  lista: AngularFireList<any>;
-  comanda: Comanda;
+  public comanda: any;
+  public comandaModel: ComandaModel;
+  public valorTotal: number = 0;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFireDatabase) {
+  constructor(public navCtrl: NavController, public af: AngularFireDatabase) {
+      this.af.list('comanda').valueChanges().subscribe((datas) => {
+      this.comanda = datas;
 
-    this.lista = this.af.list('/ipubdatabase');
-    this.comanda = new Comanda();
+      datas.forEach(items => {
+        this.valorTotal += items.valor_unitario
+        console.log(this.valorTotal)
+      });
+    });
+
+    
   }
 
-  inserir(){
-    this.lista.push(this.comanda);
+  soma(valor){
+    this.valorTotal += valor;
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ComandaPage');
+  comandaTotal(){
+    return 0;
   }
+
 
 }
